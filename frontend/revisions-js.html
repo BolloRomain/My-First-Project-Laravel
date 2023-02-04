@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Révisions JS</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+
+    // Les variables 
+    let test;
+    console.log(test);
+    test = 23;
+    console.log(test);
+    let toto = "ldnvleinv";
+
+    // Constante
+    const tata = "une valeur";
+    console.log(tata);
+
+    // Le types de données
+    let variable;
+    console.log(variable); // undefined
+    // String
+    variable = `test`; // format idéal
+    variable = "test"; // Ok
+    variable = 'test'; // Pénible
+    // Nombre
+    variable = 42;
+    variable = 42.12;
+    // Booléen
+    variable = true;
+    variable = false;
+
+    // Tableaux 
+    // indexés = 0, 1, 2
+    let tab = ["a", "b", "c", true, 42];
+    tab.push("d");
+    console.log(tab, tab[2]);
+
+    // associatif (clé/valeur) = JSON
+    tab = {
+        "cle avec des espaces": "une valeur",
+        uneautrecle: "une autre valeur",
+        a: true,
+        b: 42
+    };
+    tab.c = 6592;
+    tab["d"] = 'codneo';
+    let cle = "x";
+    tab[cle] = "lkdcld";
+    console.log(tab, tab.x, tab[cle], tab["x"]);
+    delete tab.c; // suppression d'un élément
+    console.log(tab);
+
+
+    // -------------------
+
+    let tabIndexe = ["a", "b", 'c'];
+    // Meme principe qu'en PHP
+    for (let i = 0; i < tabIndexe.length; i++) {
+        console.log(i, tabIndexe[i]);
+    }
+
+    let tabAsso = {
+        a: 1,
+        b: 23,
+        c: 7
+    };
+    // For of + tableau indexé, je reçois la valeur dans la constante element
+    for(const element of tabIndexe) {
+        console.log(element);
+    }
+
+    // For of + tab asso = impossible
+    // for (const element of tabAsso) {
+    //     console.log(element);
+    // }
+    
+    // For in + tab indexé, je reçois les index dans la constante element
+    for (const element in tabIndexe) {
+        console.log(element);
+    }
+    
+    // For in + tab asso, je reçois les clés dans la constante element
+    for (const element in tabAsso) {
+        console.log(element);
+    }
+
+
+    // ----------
+    // Les fonctions
+    function maFonction (parametre1, parametre2) {
+        const r = parametre1 + parametre2;
+        return r;
+    }
+    const resultat = maFonction(1, 5);
+    console.log(resultat);
+
+
+    // -------
+
+    // Conditions
+    let valeur = "5";
+    if ( valeur < 2) {
+        console.log("< 2")
+    }
+    else if ( valeur > 10 ) {
+        console.log("> 10")
+    }
+    else {
+        console.log("défaut")
+    }
+
+    // Opérateurs logiques
+    if ( valeur === 5 ) {
+        console.log("valuer et type sont identiques")
+    }
+    if ( valeur !== 5 ) {
+        console.log("valuer et type sont différent")
+    }
+
+    if ( valeur == 5 ) {
+        console.log("valuer identique")
+    }
+    if ( valeur != 5 ) {
+        console.log("valuer différentes")
+    }
+    
+    if ( valeur === 5 || valeur === 56 ) {
+        console.log("5 ou 56")
+    }
+    if ( valeur > 5 && valeur < 56 ) {
+        console.log("entre 6 et 55")
+    }
+    if ( valeur >= 5 && valeur <= 56 ) {
+        console.log("entre 5 et 56")
+    }
+
+    switch (valeur) {
+        case 1:
+            console.log("1");
+            break;
+        case 5:
+        case 6:
+            console.log("5 ou 6");
+            break;
+        default:
+            console.log("autres");
+            break
+    }
+
+</script>
+</html>

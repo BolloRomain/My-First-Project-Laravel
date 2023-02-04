@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1 id="id-du-noeud">Titre</h1>
+    
+        <div class="class-de-noeuds">1</div>
+        <div class="class-de-noeuds">2</div>
+        <div class="class-de-noeuds">3</div>
+        <div class="class-de-noeuds">4</div>
+    </main>
+</body>
+
+<script>
+
+    // Selection d'element HTML
+    let node1 = document.getElementById('id-du-noeud');
+    console.log(node1);
+    
+    node1 = document.querySelector('h1#id-du-noeud');
+    console.log(node1);
+
+    let nodes = document.getElementsByClassName('class-de-noeuds');
+    console.log(nodes);
+
+    nodes = document.querySelectorAll('.class-de-noeuds');
+    console.log(nodes);
+
+
+    node1.id="un-autre-id";
+    node1.textContent = "Nouveau titre";
+    
+    // Modification des class
+    node1.classList.add('test', 'tata')
+    node1.classList.remove('tata');
+    node1.classList.toggle('tata');
+    // A eviter : node1.className = "lernvlen";
+
+    node1.setAttribute('role', 'presentation');
+    node1.removeAttribute('role');
+
+    // Supprime l'élement du DOM
+    node1.remove();
+
+
+    // ---------------
+    const container = document.getElementsByTagName('main')[0];
+
+    // Création d'un élément
+    const h2 = document.createElement('h2');
+    h2.textContent = "titre de niveau 2";
+    h2.id = "id-titre-2";
+    h2.setAttribute('role', 'presentation');
+    h2.classList.add('test', 'tata')
+
+    // Ajout du titre en bas
+    container.append(h2);
+
+    const btn = document.createElement('button');
+    btn.textContent = "GO";
+
+    // Ajoute le bouton en haut
+    container.prepend(btn);
+
+
+    // --------
+    // Branchement d'événement sur le bouton
+    function handleButtonClick (event) {
+        console.log(event.currentTarget);
+        const btn = event.currentTarget;
+        btn.textContent = "GONE";
+    }
+
+    btn.addEventListener('click', handleButtonClick); 
+
+</script>
+</html>
