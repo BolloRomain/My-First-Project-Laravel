@@ -1,17 +1,3 @@
-/*
-    Bienvenue !
-    Regardez-moi ce code, il est pas beau ??? 
-
-    Si bien rangé, avec une syntaxe claire, des méthodes dédiées à chaque petite partie.
-    En plus c'est en POO ! :explode:
-
-    Au menu : 
-    constructeur, this, static, propriétés, getter, setter et même héritaaaaage !!!
-
-    Maintenant, comme dirait le tonton de spiderman :
-    "Un grand pouvoir implique de grandes responsabilitées"
-    => A vous de jouer :)
-*/
 class TaskController {
 
     // Propriétés
@@ -19,9 +5,6 @@ class TaskController {
     modal = null
     input_title = null
 
-
-    // Finit la méhtode init, bienvenue au constructeur
-    // Pas le choix, si il y a instanciation, il y aura le constructeur appelé ;)
     constructor () {
         this.showList();
 
@@ -29,11 +12,6 @@ class TaskController {
         this.container.textContent = '';
     }
 
-
-
-    /*
-        Gestion des process et evenements ( = un controller ?)
-    */
     async showList () {
         const tasks = await this.getTasks();
         for (const task of tasks) this.addTaskToDom(task);
